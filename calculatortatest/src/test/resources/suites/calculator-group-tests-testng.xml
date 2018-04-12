@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="calculator group tests"> <!-- parallel="tests" thread-count="2"-->
+
+    <test name="Negative after positive tests">
+
+        <groups>
+            <dependencies>
+                <group name="negative" depends-on="positive"/>
+            </dependencies>
+        </groups>
+
+        <classes>
+            <class name="com.epam.tat.calculator.sum.LongSumTest"/>
+            <class name="com.epam.tat.calculator.sum.DoubleSumTest"/>
+            <class name="com.epam.tat.calculator.sub.LongSubTest"/>
+            <class name="com.epam.tat.calculator.sub.DoubleSubTest"/>
+            <class name="com.epam.tat.calculator.div.LongDivTest"/>
+            <class name="com.epam.tat.calculator.div.DoubleDivTest"/>
+            <class name="com.epam.tat.calculator.div.LongDivNegativeTest"/>
+            <class name="com.epam.tat.calculator.div.DoubleDivNegativeTest"/>
+        </classes>
+    </test>
+
+    <test name="Only positive and long tests">
+
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="long"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.epam.tat.calculator.sum.LongSumTest"/>
+            <class name="com.epam.tat.calculator.sum.DoubleSumTest"/>
+            <class name="com.epam.tat.calculator.sub.LongSubTest"/>
+            <class name="com.epam.tat.calculator.sub.DoubleSubTest"/>
+            <class name="com.epam.tat.calculator.div.LongDivTest"/>
+            <class name="com.epam.tat.calculator.div.DoubleDivTest"/>
+            <class name="com.epam.tat.calculator.div.LongDivNegativeTest"/>
+            <class name="com.epam.tat.calculator.div.DoubleDivNegativeTest"/>
+        </classes>
+    </test>
+
+</suite>
