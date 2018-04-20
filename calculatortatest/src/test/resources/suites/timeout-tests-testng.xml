@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="timeuot tests">
+<suite name="Timeout tests">
 
     <test name="Timeout test">
 
